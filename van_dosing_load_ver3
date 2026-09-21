@@ -3,18 +3,43 @@
 def vanco_load(weight):
     load = 25
     result = weight * load
-    return result
+    if result > 3000:
+        return 3000
+    else:
+        return result
 
+#calculate vanco maintenance dose using fctn and dose rounding#
 def vanco_ongoing(weight):
     ongoing = 15 
     result_ongoing = weight * ongoing
-    return result_ongoing
+    if result_ongoing > 1500:
+        return 1500
+    else: 
+        return result_ongoing
+    
+patient_age = float(input("What is the patient's age?"))    
 
-weight = float(input("What is the patient's weight? "))    
+def vanco_freq(patient_age):
+    if patient_age >= 20 and patient_age <=29:
+        return ("q8h")
+    elif patient_age >=30 and patient_age<= 39:
+        return ("q12h")
+    elif patient_age >=40 and patient_age <=49:
+        return ("q18h")
+    elif patient_age >=50 and patient_age <=59:
+        return ("q18h")
+    elif patient_age >=60 and patient_age <=69:
+        return ("q24h")
+    else:
+        return ("consult pharmacy")
+weight = float(input("What is the patient's weight? "))
+
 result = vanco_load(weight)
 result_ongoing = vanco_ongoing(weight)
+vanco_dose_freq = vanco_freq(patient_age)
+
 
 round_result = round(result/250) *250
 round_ongoing = round(result_ongoing/250) * 250
 print(f"The patients vancomycin loading dose is", round_result ,"mg")
-print(f"The patients vancomycin maintenance dose is", round_ongoing,"mg")
+print(f"The patients vancomycin maintenance dose is", round_ongoing,"mg", vanco_dose_freq)
