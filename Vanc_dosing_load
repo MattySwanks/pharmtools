@@ -1,0 +1,17 @@
+"""Calculate a vancomycin loading dose."""
+
+weight = float(input("What is the patient's weight? "))
+vancload = 25
+vancdose = weight * vancload
+print("Vancomycin dose is", vancdose, "mg")
+
+#calculate vanco load using fctn#
+
+def vanco_load(weight):
+    load = 25
+    result = weight * load
+    return result
+    
+result = vanco_load(50)
+
+print(result)

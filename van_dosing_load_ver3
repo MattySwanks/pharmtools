@@ -1,0 +1,20 @@
+#calculate vanco load using fctn add dose rounding - Version 3 - add max dose of 2500 mg #
+
+def vanco_load(weight):
+    load = 25
+    result = weight * load
+    return result
+
+def vanco_ongoing(weight):
+    ongoing = 15 
+    result_ongoing = weight * ongoing
+    return result_ongoing
+
+weight = float(input("What is the patient's weight? "))    
+result = vanco_load(weight)
+result_ongoing = vanco_ongoing(weight)
+
+round_result = round(result/250) *250
+round_ongoing = round(result_ongoing/250) * 250
+print(f"The patients vancomycin loading dose is", round_result ,"mg")
+print(f"The patients vancomycin maintenance dose is", round_ongoing,"mg")

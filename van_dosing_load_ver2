@@ -1,0 +1,13 @@
+#calculate vanco load using fctn add dose rounding#
+
+def vanco_load(weight):
+    load = 25
+    result = weight * load
+    return result
+
+weight = float(input("What is the patient's weight? "))    
+result = vanco_load(weight)
+
+round_result = round(result/250) *250
+
+print(f"The patients vancomycin loading dose is", round_result ,"mg")
