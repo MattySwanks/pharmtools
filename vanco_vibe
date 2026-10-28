@@ -1,0 +1,28 @@
+#vibe coding vancomycin dosing calculator 
+
+# Vancomycin Dosing Calculator
+
+print("=== Vancomycin Dosing Calculator ===")
+
+# Patient information
+age = int(input("Enter patient age (years): "))
+
+current_creatinine = float(input("Enter current serum creatinine (umol/L): "))
+
+previous_creatinine = input(
+    "Enter previous serum creatinine (umol/L), or press Enter if unavailable: "
+)
+
+if previous_creatinine == "":
+    previous_creatinine = None
+else:
+    previous_creatinine = float(previous_creatinine)
+
+weight = float(input("Enter patient weight (kg): "))
+
+# Display patient information
+print("\n=== Patient Information ===")
+print(f"Age: {age} years")
+print(f"Current creatinine: {current_creatinine} umol/L")
+print(f"Previous creatinine: {previous_creatinine if previous_creatinine is not None else 'Not available'}")
+print(f"Weight: {weight} kg")
